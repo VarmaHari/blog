@@ -1,0 +1,19 @@
+{
+    "params":
+    {
+        "local_server" : "True",
+        "local_uri" : "mysql://root:111111@localhost/content",
+        "prod_uri": "mysql://root@localhost/content",
+        "fb_url": "https://facebook.com/myblog",
+        "twt_url": "https://twitter.com/myblog",
+        "gh_url": "https://github.com/myblog",
+        "mail_user": "hariom@simprosys.com",
+        "mail_pass" : "Varma@123",
+        "no_of_post": 3,
+        "username":"hariom",
+        "password": "111111",
+        "upload_location":"C:\\Hariom\\Flask\\myproject\\static\\assets\\img"   
+        
+
+    }
+}

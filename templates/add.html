@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('/static/assets/img/home-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Welcome to Dashboard</h1>
+                        <span class="subheading">Manager your Posts using Crud operations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+ <!-- Main Content-->
+
+ 
+        <div class="container px-4 px-lg-5">
+            
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                    <h1>Add a Post</h1>
+                  
+                    <a href="/login"><button class="btn btn-primary text-uppercase">Dashboard Home </button></a>
+                    <a href="/logout"><button class="btn btn-primary text-uppercase">Logout</button></a>
+                    <hr>
+
+                  
+                    <!-- Post preview-->
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" action="/add/{{sno}}" >
+                        <div class="form-floating">
+                            <input class="form-control" id="title" name="title" type="text"   placeholder="Title" data-sb-validations="required" />
+                            <label for="name">Title</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required"></div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="tagline" name="tagline" type="text"  placeholder="Tagline" data-sb-validations="required,email" />
+                            <label for="email">Tagline</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required"></div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email"></div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="slug" name="slug" type="text" placeholder="Slug"  data-sb-validations="required" />
+                            <label for="phone">Slug</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required"></div>
+                        </div>
+                        <div class="form-floating">
+                            <div class="form-group floating-label-group controls">
+                                <label >Content</label>
+                                <textarea rows="5" class="form-control" placeholder="Content" name="content" id="content" required data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="img_file" name="img_file" type="text" placeholder="img_file"  data-sb-validations="required" />
+                            <label for="phone">Img_file</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required"></div>
+                        </div>
+                        <br />
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                        <!-- Submit Button-->
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+                        
+                    </form>
+                    <br>
+                      
+                </div>
+         
+            </div>
+        </div>
+
+{% endblock %}
