@@ -8,12 +8,21 @@ from werkzeug.utils import secure_filename
 import math
 
 
+from second import second
+
+
 #calling from config.json file
 with open("templates/config.json", "r") as c:
     params =json.load(c)["params"]
 
 
 app = Flask(__name__)
+
+#register blueprint
+app.register_blueprint(second, url_prefix="/admin")
+
+
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:111111@localhost/blog"
 app.secret_key="my-secret-key"
 app.config['UPLOAD_FOLDER']=params['upload_location']
